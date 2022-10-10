@@ -4,6 +4,30 @@ const by = require("selenium-webdriver/lib/by");
 const { threadId } = require("worker_threads");
 require("chromedriver");
 
+//Constant selectors for easy changes
+
+    //ID and Name selectors
+    const addToCartButton = "add-to-cart-button";
+    const cartSelector = "attach-sidesheet-view-cart-button";
+    const categoryDropDownID = "searchDropdownBox";
+    const searchBoxID = "twotabsearchtextbox";
+    const searchButtonID = "nav-search-submit-button";
+    const navigateToCart = "nav-cart";
+    const home = 'nav-logo-sprites';
+
+    //Xpath selectors
+    const categorySelected = "//option[@selected='selected']";
+    const primeCheckboxClickXpath = "//div[@id='primeRefinements']//i[contains(@class,'checkbox')]";
+    const primeCheckboxXpath = "//div[@id='primeRefinements']//input[@type='checkbox']";
+    const firstSearchResult = "//div[contains(@class,'s-product-image-container')]";
+    const quantityDropDown = "//span[contains(@class,'a-dropdown-container')]";
+    const addedToCartIndicator = "//*[text()='Added to Cart']";
+    const itemQuantityInCart = "//span[contains(@class,'a-dropdown-prompt')]";
+    const compareLink = "//form[@id='activeCartViewForm']//span[@data-action='compare']//input[@type='submit']";
+    const deleteFromList = "//form[@id='activeCartViewForm']//span[@data-action='delete']//input[@type='submit']";
+    const compareHeading = "//div[@class='a-popover-wrapper']//h1[contains(text(),'Compare')]";
+    const closeModal = "//button[contains(@class,'a-button-close')]";
+
 class shoppingItem{
     constructor(itemName, itemCategory, itemQuantity){
         this.itemName = itemName;
@@ -74,29 +98,7 @@ async function test_case(driver, purchaseRequest){
     var category = purchaseRequest.itemCategory;
     var quantity = purchaseRequest.itemQuantity;
 
-    //Constant selectors for easy changes
-
-    //ID and Name selectors
-    const addToCartButton = "add-to-cart-button";
-    const cartSelector = "attach-sidesheet-view-cart-button";
-    const categoryDropDownID = "searchDropdownBox";
-    const searchBoxID = "twotabsearchtextbox";
-    const searchButtonID = "nav-search-submit-button";
-    const navigateToCart = "nav-cart";
-    const home = 'nav-logo-sprites';
-
-    //Xpath selectors
-    const categorySelected = "//option[@selected='selected']";
-    const primeCheckboxClickXpath = "//div[@id='primeRefinements']//i[contains(@class,'checkbox')]";
-    const primeCheckboxXpath = "//div[@id='primeRefinements']//input[@type='checkbox']";
-    const firstSearchResult = "//div[contains(@class,'s-product-image-container')]";
-    const quantityDropDown = "//span[contains(@class,'a-dropdown-container')]";
-    const addedToCartIndicator = "//*[text()='Added to Cart']";
-    const itemQuantityInCart = "//span[contains(@class,'a-dropdown-prompt')]";
-    const compareLink = "//form[@id='activeCartViewForm']//span[@data-action='compare']//input[@type='submit']";
-    const deleteFromList = "//form[@id='activeCartViewForm']//span[@data-action='delete']//input[@type='submit']";
-    const compareHeading = "//div[@class='a-popover-wrapper']//h1[contains(text(),'Compare')]";
-    const closeModal = "//button[contains(@class,'a-button-close')]";
+    
 
     try{
 
